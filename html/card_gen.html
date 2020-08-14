@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Card Idle card generator</title>
+    <script src="../js/vue.js"></script>
+    <link rel="stylesheet" type"text/css" href="../css/card_gen.css"/>
+    <link rel="stylesheet" type"text/css" href="../css/card.css"/>
+  </head>
+  <body>
+    <div id="container">
+      <card v-bind:card="card"></card>
+
+      <div id="settings">
+        <form>
+          <label for="title">Card title</label><br>
+          <input
+            v-model="card.title"
+            type="text"
+            name="title">
+          <br>
+          <br>
+
+          <form-branch
+            v-for="branch in form"
+            v-bind:form="branch"
+            v-on:propagate="onPropagate">
+          </form-branch>
+        </form>
+      </div>
+    </div>
+    <script src="../js/card_gen.js"></script>
+  </body>
+</html>

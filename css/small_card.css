@@ -1,0 +1,50 @@
+.card {
+    position: relative;
+    display: inline-block;
+    width: 11vw;
+}
+
+.card .aspect-ratio {
+    width: 100%;
+    padding-bottom: 150%;
+}
+
+.card .grid {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 3fr 45fr 3fr;
+    grid-template-rows: 3fr 8fr 35fr 3fr 27fr 3fr;
+    grid-template-areas:
+        ". . ." ". title ." ". image ." ". . ." ". text ." ". . .";
+    border: 0.5vw solid brown;
+    border-radius: 1vw;
+}
+
+.card .title {
+    font-size: 1.1vw;
+    grid-area: title;
+    text-align: center;
+}
+
+.card .image {
+    grid-area: image;
+    border: 1px solid darkgray;
+    background: repeating-linear-gradient(
+        63.435deg,
+        gray,
+        gray 15px,
+        darkgray 15px,
+        darkgray 30px
+    );
+}
+
+.card .text {
+    grid-area: text;
+    padding: 0.2vw;
+    font-size: 0.8vw;
+}

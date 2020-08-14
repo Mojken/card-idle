@@ -1,0 +1,139 @@
+#+TITLE: Cards
+
+* Glossary
+** N
+N is stand-in for the actual number, which is subject to balancing, upgrades,
+and passive cards.
+** Triggers
+*** per turn
+Every second by default, but can be increased by other cards.
+*** next turn
+Some effect happens the turn after some requirement has been met
+** Resource
+*** Generates
+Creates some currency or resource and adds it to a pool.
+*** Consumes
+Uses some amount of one or multiple resources. Each card with the word consumes
+on it has an internal storage for these resources, and consumes an amount of
+your production of a resource based on how many other cards also consume that
+resource. The card's active effect (if there is one) is triggered once the required
+amount has been consumed, which can take multiple turns. If enough of a resource
+is supplied that a card could be triggered multiple times in one turn, it is.
+*** Converts
+Both generates and consumes two different resources, effectively turning one
+into another.
+** Operation
+*** Set
+Some value defined by the card is set to N, where N is the number written on the card.
+*** Increase
+Some value is set to =x+N= where x is the original value, N is the number
+written on the card or value referred to by the card, and the value is defined
+by the text on the card.
+*** Decrease
+Some value is set to =x-N= where x is the original value, N is the number
+written on the card or value referred to by the card, and the value is defined
+by the text on the card.
+*** Multiply
+Some value is set to =x*N= where x is the original value, N is the number
+written on the card or value referred to by the card, and the value is defined
+by the text on the card.
+*** Divide
+Some value is set to =x/N= where x is the original value, N is the number
+written on the card or value referred to by the card, and the value is defined
+by the text on the card.
+*** Power up
+Some value is set to =x^N= where x is the original value, N is the number
+written on the card or value referred to by the card, and the value is defined
+by the text on the card.
+** Target
+*** the next card
+"the next card" refers to the card to the immediate right of the card in question
+*** all following cards
+"all following cards" refers to all cards to the right of the card in question
+** Constraint
+*** up to - per turn
+A restraint on some action or effect, saying that it can only happen a set
+amount of times per turn, or to a set degree. For example, =Give= reads
+"Consumes up to N booster packs per turn", meaning it won't consume more than N in a given
+turn. A common restraint is "up to once per turn".
+*** if it consumes
+Only activates if the card can consume N of some resource in one turn. Can only
+activate once per turn.
+* Active cards
+** Income
+Generates N booster packs per turn
+** Concentration
+Generates N mana per turn
+** Conjuring
+Converts N mana into N booster packs
+** Time warp
+Consumes N mana to activate all following cards. Can't target mana cards.
+** Investment
+Consumes N% of your booster packs to generate N times that next turn
+** Give
+Consumes up to N booster packs per turn
+** Take
+Generates 0.1% of the total booster packs =Give= has consumed
+** Subspace expansion
+Increases hand size by 1 if it consumes N mana
+** Resource idea
++ Generates N resource per turn
++ Converts resource into other resource at a ratio of 1:N (or N:1)
++ Converts resource A and B into resource C at a ratio of (5,2):N
+** Gifts
+Opens up to N booster packs per turn, if you can afford it
+* Passive cards
+Passive cards improve or change the effect of other cards, mostly active cards.
+** Change the number on another card
+*** Potency
+Increase the number on the next card by N
+*** Increase the number on all following cards by N
+*** Decrease the number on the next card by N
+*** Decrease the number on all following cards by N
+** Multiply the effect of another card
+Unlike changes to activation per turn, this can affect cards that don't activate
+per turn, such as resource consumers or passive cards as well as cards that can
+only activate once per turn.
+*** Multiply the effect of the next card by N
+*** Multiply the effect of all following cards by N
+** Change how many times per turn another card activates
+*** Echo
+Increase the amount of times the next card activates per turn by N
+*** Echo chamber
+Increase the amount of times all following cards activate per turn by N
+*** Parallel worlds
+Multiply the amount of times the next card activates per turn by N
+*** Warped reality
+Multiply the amount of times all following cards activate per turn by N
+** Change the resource cost of another card
+*** Bartering
+Decrease the resource cost of the next card by N
+*** Trade agreement
+Divide the resource cost of the next card by N
+*** Subsidy
+Decrease the resource cost of all following cards by N
+*** Favouritism
+Divide the resource cost of all following cards by N
+*** Bribes
+Increase the resource cost of the next card by N
+*** Set the resource cost of the next card to N
+* Meta cards
+Meta cards are cards that just have some effect that affects the game itself or
+The Hand. Examples are increase tick speed or hand size. The order of these
+cards affect nothing, and they have purely passive effects.
+** Hand size
+*** Multitasking
+Set hand size to N
+*** Increase hand size by N
+** Turn speed
+*** Set the amount of turns per second to N
+*** Increase the amount of turns per second by N
+*** Multiply the amount of turns per second by N
+** Card rarity
+*** Increase the rarity of cards received from booster packs by N
+*** Multiply the rarity of cards received from booster packs by N
+** Booster pack size
+*** Prosperity
+Set the amount of cards in each booster pack to N
+*** Increase the amount of cards in each booster pack by N
+*** Multiply the amount of cards in each booster pack by N

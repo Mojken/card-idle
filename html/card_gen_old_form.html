@@ -1,0 +1,189 @@
+        <form>
+          <label for="title">Card title</label><br>
+          <input
+            v-model="card.title"
+            type="text"
+            name="title">
+          <br>
+          <br>
+
+          <fieldset class="branches">
+            <label for="type">Type</label><br>
+            <select name="type"
+                    v-model="card.type">
+              <option value=""></option>
+              <option value="active">Active</option>
+              <option value="passive">Passive</option>
+              <option value="meta">Meta</option>
+            </select>
+            <br>
+
+            <fieldset id="active" class="branches hidden">
+              <legend>
+                <b>Active</b>
+              </legend>
+              <fieldset class="">
+                <legend>
+                  <b>Trigger</b> — Determines when the card's action is performed
+                </legend>
+                <select name="trigger"
+                        onchange="updateForm(this);">
+                  <option selected value=""></option>
+                  <option value="per turn">...per turn</option>
+                  <option value="next turn">...next turn</option>
+                  <option value="resource consumed">Resource consumed</option>
+                </select>
+                <br>
+              </fieldset>
+
+              <fieldset class="branches">
+                <legend><b>Resource</b> — Interacts with a resource in some way
+                </legend>
+                <select name="resource type"
+                        onchange="updateForm(this);"
+                        >
+                  <option value=""></option>
+                  <option value="generate">Generates...</option>
+                  <option value="consume">Consumes...</option>
+                  <option value="convert">Converts...</option>
+                </select>
+                <br>
+                <fieldset id="generate" class="hidden">
+                  <legend>Generates</legend>
+                  <label for="generate resource">Resource</label><br>
+                  <select name="generate resource"
+                          onchange="updateForm(this);"
+                          >
+                    <option value=""></option>
+                    <option value="booster packs">booster packs</option>
+                    <option value="mana">mana</option>
+                  </select>
+                </fieldset>
+                <fieldset id="consume" class="hidden">
+                  <legend>Consumes</legend>
+                  <label for="consume resource">Resource</label><br>
+                  <select name="consume resource"
+                          onchange="updateForm(this);"
+                          >
+                    <option value=""></option>
+                    <option value="booster packs">booster packs</option>
+                    <option value="mana">mana</option>
+                  </select>
+                </fieldset>
+                <fieldset id="convert" class="hidden">
+                  <legend>Converts</legend>
+                  <label for="convert resource A">Resource A</label><br>
+                  <select name="convert resource A"
+                          onchange="updateForm(this);"
+                          >
+                    <option value=""></option>
+                    <option value="booster packs">booster packs</option>
+                    <option value="mana">mana</option>
+                  </select><br>
+                  <label for="convert resource B">Resource B</label><br>
+                  <select name="convert resource B"
+                          onchange="updateForm(this);"
+                          >
+                    <option value=""></option>
+                    <option value="booster packs">booster packs</option>
+                    <option value="mana">mana</option>
+                  </select>
+                  <br>
+                  <label for="ratioA">Ratio</label><br>
+                  <input type="number"
+                         min="1"
+                         name="ratioA"
+                         onchange="updateForm(this);"
+                         ></input>
+                  :
+                  <input type="number"
+                         min="1"
+                         name="ratioB"
+                         onchange="updateForm(this);"
+                         ></input>
+                </fieldset>
+              </fieldset>
+              <fieldset class="branches">
+                <legend>
+                  <b>Constraint</b> — Some limit to the card's function
+                </legend>
+                <select name="constraint"
+                        onchange="updateForm(this);">
+                  <option value=""></option>
+                  <option value="up to">...up to ... per turn...</option>
+                  <option value="consumes">...if it consumes...</option>
+                </select>
+              </fieldset>
+            </fieldset>
+
+            <fieldset id="passive" class="hidden">
+              <legend>
+                <b>Passive</b>
+              </legend>
+              <fieldset class="branches">
+                <legend>
+                  <b>Operation</b> — Some mathematical operation
+                </legend>
+                <select name="operation"
+                        onchange="updateForm(this);">
+                  <option value=""></option>
+                  <option value="set">Set...</option>
+                  <option value="increase">Increase...</option>
+                  <option value="decrease">Decrease...</option>
+                  <option value="multiply">Multiply...</option>
+                  <option value="divide">Divide...</option>
+                  <option value="exponent">Power up...</option>
+                </select>
+                <br>
+              </fieldset>
+              <fieldset class="branches">
+                <legend>
+                  <b>Target</b> — Some other card, subject to this card's action
+                </legend>
+                <select name="target"
+                        onchange="updateForm(this);">
+                  <option value=""></option>
+                  <option value="next">...the next card</option>
+                  <option value="all">...all following cards</option>
+                </select>
+                <br>
+              </fieldset>
+            </fieldset>
+
+            <fieldset id="meta" class="hidden">
+              <legend>
+                <b>Meta</b>
+              </legend>
+              <fieldset class="branches">
+                <legend>
+                  <b>Operation</b> — Some mathematical operation
+                </legend>
+                <select name="operation"
+                        onchange="updateForm(this);">
+                  <option value=""></option>
+                  <option value="set">Set...</option>
+                  <option value="increase">Increase...</option>
+                  <option value="decrease">Decrease...</option>
+                  <option value="multiply">Multiply...</option>
+                  <option value="divide">Divide...</option>
+                  <option value="exponent">Power up...</option>
+                </select>
+                <br>
+              </fieldset>
+              <fieldset class="branches">
+                <legend>
+                  <b>Target</b> — Some other card, subject to this card's action
+                </legend>
+                <select name="target"
+                        onchange="updateForm(this);">
+                  <option value=""></option>
+                  <option value="next">...the next card</option>
+                  <option value="all">...all following cards</option>
+                </select>
+                <br>
+              </fieldset>
+            </fieldset>
+          </fieldset>
+          <br>
+          <input type="reset" onclick="updateForm(this)"></input>
+        </form>

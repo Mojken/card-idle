@@ -1,0 +1,6 @@
+* Card Idle
+Card idle is an incremental game inspired by trading card games. You open
+booster packs to get some random cards, and you select a few of these to hold in
+your hand, where they have some effect. The most basic effect would be to
+generate some resource, and the first card you get would generate the resource
+you need to open more booster packs.
